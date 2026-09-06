@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 type PostType = 'surplus' | 'need';
 type ViewMode = 'list' | 'map';
@@ -96,10 +97,10 @@ export default function Home() {
       
       {/* 1. Left Sidebar Navigation (Desktop Only) */}
       <aside className="desktop-sidebar">
-        <div className="brand">
+        <Link href="/" className="brand" style={{textDecoration: 'none', color: 'inherit'}}>
           <i className="fa-solid fa-hand-holding-heart"></i>
           <span>Human Needs</span>
-        </div>
+        </Link>
         <nav className="nav-menu">
           <a href="#" className="nav-item active"><i className="fa-solid fa-house"></i><span>Dashboard</span></a>
           <a href="#" className="nav-item"><i className="fa-solid fa-users"></i><span>Network</span></a>
@@ -120,10 +121,10 @@ export default function Home() {
         
         {/* Mobile App Header (Visible only on mobile) */}
         <div className="mobile-header">
-            <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+            <Link href="/" style={{display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', color: 'inherit'}}>
                 <i className="fa-solid fa-hand-holding-heart" style={{color: 'var(--primary)', fontSize: '1.5rem'}}></i>
                 <span style={{fontWeight: 700, fontSize: '1.25rem'}}>Human Needs</span>
-            </div>
+            </Link>
         </div>
 
         {/* Status Card */}
