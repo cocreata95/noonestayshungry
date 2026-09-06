@@ -3,20 +3,27 @@
 @tailwind utilities;
 
 :root {
-    --primary: #FF7E67;       
-    --primary-light: #FFF0ED; 
-    --primary-hover: #FF6B52;
-    --secondary: #88D49E;     
-    --secondary-light: #E6F7ED;
-    --urgent: #FFB347;        
-    --urgent-light: #FFF5E6;
-    --logistics: #6DB3F2;     
-    --logistics-light: #E8F4FD;
+    /* Trust & Platform (Blue) */
+    --primary: #3B82F6;       
+    --primary-light: #EFF6FF; 
+    --primary-hover: #2563EB;
     
-    --bg-color: #FDFDFB;      
+    /* Surplus (Soft Green) */
+    --secondary: #10B981;     
+    --secondary-light: #ECFDF5;
+    
+    /* Care & Needs (Rose/Red) */
+    --urgent: #F43F5E;        
+    --urgent-light: #FFF1F2;
+    
+    /* Logistics (Indigo/Purple) */
+    --logistics: #8B5CF6;     
+    --logistics-light: #F5F3FF;
+    
+    --bg-color: #F8FAFC; /* slightly cooler white */
     --surface: #FFFFFF;
-    --text-dark: #2C3539;     
-    --text-medium: #5C6770;
+    --text-dark: #1E293B;     
+    --text-medium: #64748B;
     --text-light: #94A3B8;
     --border: #F1F5F9;
     
@@ -26,7 +33,7 @@
     --radius-full: 999px;
     
     --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.03);
-    --shadow-md: 0 10px 30px rgba(255, 126, 103, 0.15); 
+    --shadow-md: 0 10px 30px rgba(59, 130, 246, 0.15); /* blue shadow */
 }
 
 * {
@@ -127,8 +134,8 @@ body {
 .btn-small.accept:hover { background: var(--border); }
 
 /* Map View */
-.map-container { position: relative; width: 100%; height: 600px; background: #FAF6EE; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: inset 0 0 20px rgba(0,0,0,0.02); }
-.map-bg { position: absolute; width: 100%; height: 100%; opacity: 0.15; background-image: radial-gradient(circle at center, transparent 0%, #FAF6EE 100%), repeating-linear-gradient(45deg, var(--primary) 0, var(--primary) 1px, transparent 1px, transparent 20px); }
+.map-container { position: relative; width: 100%; height: 600px; background: #F8FAFC; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: inset 0 0 20px rgba(0,0,0,0.02); }
+.map-bg { position: absolute; width: 100%; height: 100%; opacity: 0.15; background-image: radial-gradient(circle at center, transparent 0%, #F8FAFC 100%), repeating-linear-gradient(45deg, var(--primary) 0, var(--primary) 1px, transparent 1px, transparent 20px); }
 .map-marker { position: absolute; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; cursor: pointer; transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10; transform: translate(-50%, -50%); }
 .map-marker:hover { transform: translate(-50%, -50%) scale(1.15); z-index: 20; }
 .map-marker.surplus { background: var(--secondary); border: 3px solid white;}
@@ -156,7 +163,7 @@ body {
 .form-control { width: 100%; padding: 14px 16px; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-size: 1rem; font-family: inherit; color: var(--text-dark); background: var(--bg-color); transition: border-color 0.2s; }
 .form-control:focus { outline: none; border-color: var(--primary); }
 
-.btn-primary.huge-action { background: linear-gradient(135deg, var(--primary) 0%, #FF927A 100%); color: white; border: none; border-radius: var(--radius-lg); padding: 20px; font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; box-shadow: var(--shadow-md); transition: transform 0.2s ease, box-shadow 0.2s ease; width: 100%; margin-top: 8px; }
+.btn-primary.huge-action { background: linear-gradient(135deg, var(--primary) 0%, #60A5FA 100%); color: white; border: none; border-radius: var(--radius-lg); padding: 20px; font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; box-shadow: var(--shadow-md); transition: transform 0.2s ease, box-shadow 0.2s ease; width: 100%; margin-top: 8px; }
 .btn-primary.huge-action:active { transform: scale(0.98); }
 .action-icon { font-size: 1.5rem; background: rgba(255,255,255,0.2); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-full); }
 
