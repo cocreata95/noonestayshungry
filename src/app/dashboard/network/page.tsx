@@ -5,12 +5,12 @@ export default function NetworkPage() {
   const [activeTab, setActiveTab] = useState('all');
   
   const networkData = [
-    { id: 1, type: 'donor', name: 'Fresh Bites Restaurant', stat: '850 meals donated', icon: 'fa-store', badge: 'Verified Donor' },
-    { id: 2, type: 'receiver', name: 'Hope Shelter', stat: 'Serves 200/day', icon: 'fa-building-ngo', badge: 'Verified Partner' },
-    { id: 3, type: 'logistics', name: 'Rahul V.', stat: '45 deliveries', icon: 'fa-motorcycle', badge: 'Top Volunteer' },
-    { id: 4, type: 'donor', name: 'City Bakery', stat: '320 meals donated', icon: 'fa-store', badge: 'Verified Donor' },
-    { id: 5, type: 'receiver', name: 'Downtown Community Kitchen', stat: 'Serves 500/day', icon: 'fa-building-ngo', badge: 'Verified Partner' },
-    { id: 6, type: 'logistics', name: 'Sarah K.', stat: '12 deliveries', icon: 'fa-motorcycle', badge: 'Volunteer' },
+    { id: 1, type: 'donor', name: 'Fresh Bites Restaurant', stat: '850 meals donated', icon: 'fa-store', badge: 'Verified Donor', role: 'Restaurant' },
+    { id: 2, type: 'receiver', name: 'Hope Shelter', stat: 'Serves 200/day', icon: 'fa-building-ngo', badge: 'Verified Partner', role: 'NGO' },
+    { id: 3, type: 'logistics', name: 'Rahul V.', stat: '45 deliveries', icon: 'fa-motorcycle', badge: 'Top Volunteer', role: 'Delivery Volunteer' },
+    { id: 4, type: 'donor', name: 'City Bakery', stat: '320 meals donated', icon: 'fa-store', badge: 'Verified Donor', role: 'Bakery' },
+    { id: 5, type: 'receiver', name: 'Downtown Community Kitchen', stat: 'Serves 500/day', icon: 'fa-building-ngo', badge: 'Verified Partner', role: 'Community Kitchen' },
+    { id: 6, type: 'logistics', name: 'Sarah K.', stat: '12 deliveries', icon: 'fa-motorcycle', badge: 'Volunteer', role: 'Delivery Volunteer' },
   ];
 
   const filtered = activeTab === 'all' ? networkData : networkData.filter(d => d.type === activeTab);
@@ -48,6 +48,7 @@ export default function NetworkPage() {
                         </div>
                         <div>
                             <h3 style={{fontWeight: 700, fontSize: '1.1rem'}}>{item.name}</h3>
+                            <div style={{fontSize: '0.85rem', color: 'var(--text-dark)', fontWeight: 500, marginBottom: 2}}>{item.role}</div>
                             <div style={{fontSize: '0.85rem', color: 'var(--text-medium)'}}><i className="fa-solid fa-check-circle" style={{color: 'var(--secondary)'}}></i> {item.badge}</div>
                         </div>
                     </div>
