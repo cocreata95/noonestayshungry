@@ -305,3 +305,89 @@ body {
     .mobile-nav .nav-item i { font-size: 1.25rem; }
     .mobile-nav .nav-item.active { color: var(--primary); }
 }
+
+/* Landing Page Styles */
+.landing-container {
+    min-height: 100vh;
+    background: radial-gradient(circle at top center, var(--primary-light) 0%, var(--bg-color) 60%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+.landing-hero {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 80px;
+    animation: fadeInUp 0.8s ease;
+}
+.hero-icon {
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 24px;
+}
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+}
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.landing-steps {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    max-width: 1200px;
+    width: 100%;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+.step-card {
+    background: var(--surface);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+.step-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 24px;
+}
+.step-icon.surplus { background: var(--secondary-light); color: var(--secondary); }
+.step-icon.logistics { background: var(--logistics-light); color: var(--logistics); }
+.step-icon.need { background: var(--urgent-light); color: var(--urgent); }
+.step-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
+.step-card p { color: var(--text-medium); line-height: 1.5; }
+.step-arrow { font-size: 2rem; color: var(--border); }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+    .landing-steps { flex-direction: column; gap: 16px; }
+    .step-arrow { transform: rotate(90deg); }
+    .hero-title { font-size: 2.5rem; }
+    .landing-hero { margin-bottom: 40px; }
+}
