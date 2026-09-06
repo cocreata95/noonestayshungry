@@ -428,3 +428,10 @@ body {
     .hero-title { font-size: 2.5rem; }
     .landing-hero { margin-bottom: 40px; }
 }
+
+/* Network Page Optimizations */
+@media (min-width: 1025px) {
+    .network-grid {
+        grid-column: 2 / span 2;
+    }
+}

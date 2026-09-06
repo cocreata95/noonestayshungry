@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 type PostType = 'surplus' | 'need';
 type ViewMode = 'list' | 'map';
@@ -18,7 +17,7 @@ interface FeedItem {
   y: number;
 }
 
-export default function Home() {
+export default function DashboardFeedPage() {
   const [postType, setPostType] = useState<PostType>('surplus');
   const [viewMode, setViewMode] = useState<ViewMode>('list');
   const [meals, setMeals] = useState('');
@@ -93,38 +92,16 @@ export default function Home() {
   };
 
   return (
-    <div className="app-container">
-      
-      {/* 1. Left Sidebar Navigation (Desktop Only) */}
-      <aside className="desktop-sidebar">
-        <Link href="/" className="brand" style={{textDecoration: 'none', color: 'inherit'}}>
-          <i className="fa-solid fa-hand-holding-heart"></i>
-          <span>Human Needs</span>
-        </Link>
-        <nav className="nav-menu">
-          <a href="#" className="nav-item active"><i className="fa-solid fa-house"></i><span>Dashboard</span></a>
-          <a href="#" className="nav-item"><i className="fa-solid fa-users"></i><span>Network</span></a>
-          <a href="#" className="nav-item"><i className="fa-solid fa-chart-line"></i><span>Impact</span></a>
-        </nav>
-        
-        <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <img src="https://ui-avatars.com/api/?name=User&background=FF8A65&color=fff&rounded=true" alt="Profile" style={{width: 48, borderRadius: 999}} />
-          <div>
-            <div style={{fontWeight: 600}}>My Profile</div>
-            <div style={{fontSize: '0.85rem', color: 'var(--text-medium)'}}>Community Member</div>
-          </div>
-        </div>
-      </aside>
-
-      {/* 2. Center Feed Column */}
+    <>
+      {/* Center Feed Column */}
       <main className="main-content">
         
         {/* Mobile App Header (Visible only on mobile) */}
         <div className="mobile-header">
-            <Link href="/" style={{display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', color: 'inherit'}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
                 <i className="fa-solid fa-hand-holding-heart" style={{color: 'var(--primary)', fontSize: '1.5rem'}}></i>
                 <span style={{fontWeight: 700, fontSize: '1.25rem'}}>Human Needs</span>
-            </Link>
+            </div>
         </div>
 
         {/* Status Card */}
@@ -219,7 +196,7 @@ export default function Home() {
       {/* Mobile Overlay Background */}
       <div className={`mobile-overlay ${isMobilePostOpen ? 'active' : ''}`} onClick={() => setIsMobilePostOpen(false)}></div>
 
-      {/* 3. Right Action Panel (Posting Feature) - Slides up on Mobile */}
+      {/* Right Action Panel (Posting Feature) - Slides up on Mobile */}
       <aside className={`action-panel ${isMobilePostOpen ? 'mobile-open' : ''}`}>
         <button className="mobile-close-btn" onClick={() => setIsMobilePostOpen(false)}>
             <i className="fa-solid fa-xmark"></i>
@@ -276,15 +253,6 @@ export default function Home() {
       <button className="mobile-fab" onClick={() => setIsMobilePostOpen(true)}>
         <i className="fa-solid fa-plus"></i>
       </button>
-
-      {/* Mobile Bottom Navigation */}
-      <nav className="mobile-nav">
-        <a href="#" className="nav-item active"><i className="fa-solid fa-house"></i><span>Home</span></a>
-        <a href="#" className="nav-item"><i className="fa-solid fa-users"></i><span>Network</span></a>
-        <a href="#" className="nav-item"><i className="fa-solid fa-chart-line"></i><span>Impact</span></a>
-        <a href="#" className="nav-item"><i className="fa-solid fa-user"></i><span>Profile</span></a>
-      </nav>
-
-    </div>
+    </>
   );
 }
