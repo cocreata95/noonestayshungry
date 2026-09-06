@@ -200,6 +200,36 @@ body {
     .status-metrics { width: 100%; justify-content: space-between; gap: 16px; }
     .metric { align-items: flex-start; }
     
+    /* Mobile Feed Card Optimization */
+    .feed-card {
+        flex-wrap: wrap;
+        padding: 16px;
+        gap: 16px;
+    }
+    .feed-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+    .feed-content {
+        flex: 1 1 calc(100% - 64px);
+    }
+    .feed-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-top: 8px;
+    }
+    .feed-meta span:nth-child(even) {
+        display: none; /* Hide bullets */
+    }
+    .feed-card .btn-small {
+        width: 100%;
+        flex: 1 1 100%;
+        margin-top: 8px;
+        padding: 14px;
+    }
+    
     .map-container { height: 400px; }
     
     /* Action Panel becomes a slide-up overlay on mobile */
